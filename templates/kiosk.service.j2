@@ -1,0 +1,14 @@
+[Unit]
+Description=X11 Kiosk
+After=network.target
+
+[Service]
+User={{ kiosk_user }}
+Group={{ kiosk_group }}
+Environment=DISPLAY={{ kiosk_display }}
+ExecStart=/usr/bin/startx /etc/X11/kiosk-xinit -- {{ kiosk_display }} -nocursor vt1
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

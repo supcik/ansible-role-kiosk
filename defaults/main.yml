@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2026 Jacques Supcik <jacques.supci@hes-so.ch>
+#
+# SPDX-License-Identifier: MIT
+---
+kiosk_url: 'https://www.example.com'
+kiosk_user: 'pi'
+kiosk_group: 'pi'
+kiosk_display: ':0'
+kiosk_chrome_window_position: '0,0'
+kiosk_chrome_window_size: '1920,1080'
+kiosk_kernel_video: 'HDMI-A-1:1920x1080@60'
