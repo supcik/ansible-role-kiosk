@@ -5,8 +5,8 @@
 - name: Validate system requirements
   assert:
     that:
-      - ansible_system | lower == 'linux'
-      - ansible_service_mgr == 'systemd'
+      - ansible_facts["system"] | lower == 'linux'
+      - ansible_facts["service_mgr"] == 'systemd'
     fail_msg: 'This role requires a Linux system with systemd as the service manager.'
 
 - name: Install required packages
@@ -27,7 +27,7 @@
     dest: /etc/X11/xinit/kiosk-xinit
     mode: '0755'
   when:
-    - ansible_system | lower == 'linux'
+    - ansible_facts["system"] | lower == 'linux'
 
 - name: Install systemd service unit
   ansible.builtin.template:
@@ -35,8 +35,8 @@
     dest: /etc/systemd/system/kiosk.service
     mode: '0644'
   when:
-    - ansible_system | lower == 'linux'
-    - ansible_service_mgr == 'systemd'
+    - ansible_facts["system"] | lower == 'linux'
+    - ansible_facts["service_mgr"] == 'systemd'
   notify:
     - Reload systemd
     - Restart kiosk
@@ -48,8 +48,8 @@
     state: started
     daemon_reload: true
   when:
-    - ansible_system | lower == 'linux'
-    - ansible_service_mgr == 'systemd'
+    - ansible_facts["system"] | lower == 'linux'
+    - ansible_facts["service_mgr"] == 'systemd'
 
 - name: Set kernel video mode
   ansible.builtin.lineinfile:
