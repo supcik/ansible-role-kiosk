@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 ---
-kiosk_url: 'https://www.whitescreen.online/blue-screen-of-death-windows/'
+kiosk_url: 'https://geekprank.com/'
 kiosk_user: 'pi'
 kiosk_group: 'pi'
 kiosk_display: ':0'
