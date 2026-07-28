@@ -31,13 +31,13 @@
 
 - name: Fix Xwrapper.config for anybody rights
   ansible.builtin.lineinfile:
-    path: /etc/X11/xwrapper.config
+    path: /etc/X11/Xwrapper.config
     regexp: '^allowed_users='
     line: 'allowed_users=anybody'
 
 - name: Fix Xwrapper.config for root rights
   ansible.builtin.lineinfile:
-    path: /etc/X11/xwrapper.config
+    path: /etc/X11/Xwrapper.config
     regexp: '^needs_root_rights='
     line: 'needs_root_rights=yes'
 
