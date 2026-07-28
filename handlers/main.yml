@@ -9,7 +9,7 @@
     - ansible_facts["system"] | lower == 'linux'
     - ansible_facts["service_mgr"] == 'systemd'
 
-- name: Restart kiosk service
+- name: Restart kiosk
   ansible.builtin.systemd:
     name: kiosk
     state: restarted
