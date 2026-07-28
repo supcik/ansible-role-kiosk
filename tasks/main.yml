@@ -29,6 +29,18 @@
   when:
     - ansible_facts["system"] | lower == 'linux'
 
+- name: Fix Xwrapper.config for anybody rights
+  ansible.builtin.lineinfile:
+    path: /etc/X11/xwrapper.config
+    regexp: '^allowed_users='
+    line: 'allowed_users=anybody'
+
+- name: Fix Xwrapper.config for root rights
+  ansible.builtin.lineinfile:
+    path: /etc/X11/xwrapper.config
+    regexp: '^needs_root_rights='
+    line: 'needs_root_rights=yes'
+
 - name: Install systemd service unit
   ansible.builtin.template:
     src: kiosk.service.j2
