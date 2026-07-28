@@ -6,7 +6,7 @@ After=network.target
 User={{ kiosk_user }}
 Group={{ kiosk_group }}
 Environment=DISPLAY={{ kiosk_display }}
-ExecStart=/usr/bin/startx /etc/X11/kiosk-xinit -- {{ kiosk_display }} -nocursor vt1
+ExecStart=/usr/bin/startx /etc/X11/xinit/kiosk-xinit -- {{ kiosk_display }} -nocursor vt1
 Restart=always
 RestartSec=2
 

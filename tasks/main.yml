@@ -23,7 +23,7 @@
 
 - name: Install X11 configuration file
   ansible.builtin.template:
-    src: kiosk.xinit.j2
+    src: kiosk-xinit.j2
     dest: /etc/X11/xinit/kiosk-xinit
     mode: '0755'
   when:
