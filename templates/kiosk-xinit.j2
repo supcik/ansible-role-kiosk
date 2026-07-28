@@ -5,6 +5,8 @@ xset s noblank
 
 unclutter -idle 0.5 -root &   # hides mouse cursor, optional package
 
+xrandr --output {{ kiosk_xrandr_output }} --mode {{ kiosk_xrandr_mode }} --rate {{ kiosk_xrandr_rate }} &
+
 chromium --kiosk \
   --window-position={{ kiosk_chrome_window_position }} \
   --window-size={{ kiosk_chrome_window_size }} \
